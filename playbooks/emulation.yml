@@ -1,0 +1,8 @@
+---
+# file: playbooks/emulation.yml
+
+- hosts: emulation
+  tasks:
+    - name: Testing
+      debug:
+        msg: Testing Emulation

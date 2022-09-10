@@ -1,0 +1,8 @@
+---
+# file: playbooks/development.yml
+
+- hosts: development
+  tasks:
+    - name: Testing
+      debug:
+        msg: Testing Development

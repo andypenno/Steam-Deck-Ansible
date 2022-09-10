@@ -1,0 +1,12 @@
+---
+# file: playbooks/ssh.yml
+
+- hosts: ssh
+  tasks:
+    - name: Testing
+      debug:
+        msg: Testing SSH
+
+    # Enable SSH access to Steam Deck
+    # Modify the default SSH Port
+    # Allow only public-key access

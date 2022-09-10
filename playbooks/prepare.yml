@@ -1,0 +1,11 @@
+---
+# file: playbooks/prepare.yml
+
+- hosts: deck
+  tasks:
+    - name: Testing
+      debug:
+        msg: Testing Preparation
+
+    # Check expected variables are defined
+    # Create expected folder paths

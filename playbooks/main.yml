@@ -1,0 +1,7 @@
+---
+# file: playbooks/main.yml
+
+- import_playbook: prepare.yml
+- import_playbook: ssh.yml
+- import_playbook: emulation.yml
+- import_playbook: development.yml
