@@ -1,0 +1,11 @@
+all:
+  children:
+    ssh:
+      children:
+        deck:
+    emulation:
+      children:
+        deck:
+    development:
+      children:
+        deck:
