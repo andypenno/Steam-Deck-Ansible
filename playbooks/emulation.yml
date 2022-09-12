@@ -2,7 +2,36 @@
 # file: playbooks/emulation.yml
 
 - hosts: emulation
+  vars:
+    __emulation_emudeck_script_name: emudeck_install.sh
   tasks:
-    - name: Testing
+    - name: Creating emulation work directory
+      file:
+          path: "{{ emulation_work_dir }}"
+          state: directory
+
+    - name: Getting Emudeck script
+      register: __emulation_emudeck_download
+      ignore_errors: true
+      get_url:
+          dest: "{{ emulation_work_dir }}/{{ __emulation_emudeck_script_name }}"
+          url: "{{ emulation_emudeck_script_src }}"
+          timeout: 10
+
+    - name: Checking Emudeck download succeeded
+      when: __emulation_emudeck_download is failed
       debug:
-        msg: Testing Emulation
+        msg: "Unable to download Emudeck install script. Please check access to: {{ emulation_emudeck_script_src }}"
+
+    - name: Updating and Executing Emudeck installation
+      block:
+        - name: Updating Emudeck installation directory
+          replace:
+              path: "{{ emulation_work_dir }}/{{ __emulation_emudeck_script_name }}"
+              regexp: "$HOME/emudeck"
+              replace: "{{ emulation_emudeck_install_dir }}"
+
+        - name: Running Emudeck installation
+          shell:
+            cmd: "bash -s {{ __emulation_emudeck_script_name }} -- INTERNAL"
+            chdir: "{{ emulation_work_dir }}"

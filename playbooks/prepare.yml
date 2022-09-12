@@ -7,5 +7,8 @@
       debug:
         msg: Testing Preparation
 
-    # Check expected variables are defined
-    # Create expected folder paths
+# Check expected variables are defined
+# Change root password
+# Change user password
+# Add user to sudoers group
+# Create expected folder paths

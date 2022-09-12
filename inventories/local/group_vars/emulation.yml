@@ -1,0 +1,7 @@
+---
+#
+
+emulation_work_dir: "{{ ansible_work_dir }}/emulation"
+
+emulation_emudeck_install_dir: "{{ emulation_work_dir }}/emudeck"
+emulation_emudeck_script_src: "https://raw.githubusercontent.com/dragoonDorise/EmuDeck/main/install.sh"
