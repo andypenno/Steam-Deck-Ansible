@@ -1,0 +1,8 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Name=Install Default Configuration
+Exec=curl https://raw.githubusercontent.com/andypenno/Steam-Deck-Ansible/main/scripts/setup.sh | bash -- -i
+Icon=steamdeck-gaming-return
+Terminal=true
+Type=Application
+StartupNotify=false
