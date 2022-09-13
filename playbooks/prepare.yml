@@ -12,3 +12,8 @@
 # Change user password
 # Add user to sudoers group
 # Create expected folder paths
+
+    - name: Installing Flatpaks
+      flatpak:
+        name:
+          - flathub me.kozec.syncthingtk
