@@ -45,7 +45,7 @@ pip3 install ansible-core
 rm -rf $INSTALL_DIR
 mkdir -p $INSTALL_DIR
 cd $INSTALL_DIR
-git clone -o $INSTALL_DIR https://github.com/andypenno/Steam-Deck-Ansible.git
+git clone https://github.com/andypenno/Steam-Deck-Ansible.git .
 
 # Install ansible requirements
 ansible-galaxy install -r requirements.yml
