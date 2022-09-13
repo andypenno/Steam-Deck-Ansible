@@ -42,11 +42,12 @@ python3 -m ensurepip
 pip3 install ansible-core
 
 # Clone the scripts repository
+rm -rf $INSTALL_DIR
 mkdir -p $INSTALL_DIR
+cd $INSTALL_DIR
 git clone -o $INSTALL_DIR https://github.com/andypenno/Steam-Deck-Ansible.git
 
 # Install ansible requirements
-cd $INSTALL_DIR
 ansible-galaxy install -r requirements.yml
 
 # Notify the user, and trigger installation if passed as an argument
