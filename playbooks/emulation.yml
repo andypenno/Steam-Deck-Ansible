@@ -25,13 +25,13 @@
 
     - name: Updating and Executing Emudeck installation
       block:
-        - name: Updating Emudeck installation directory
-          replace:
-              path: "{{ emulation_work_dir }}/{{ __emulation_emudeck_script_name }}"
-              regexp: "$HOME/emudeck"
-              replace: "{{ emulation_emudeck_install_dir }}"
+        # - name: Updating Emudeck installation directory
+        #   replace:
+        #       path: "{{ emulation_work_dir }}/{{ __emulation_emudeck_script_name }}"
+        #       regexp: "$HOME/emudeck"
+        #       replace: "{{ emulation_emudeck_install_dir }}"
 
         - name: Running Emudeck installation
           shell:
-            cmd: "bash -s {{ __emulation_emudeck_script_name }} -- INTERNAL"
+            cmd: "cat {{ __emulation_emudeck_script_name }} | bash -s -- INTERNAL"
             chdir: "{{ emulation_work_dir }}"
