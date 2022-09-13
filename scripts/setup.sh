@@ -38,8 +38,7 @@ done
 export PATH=$PATH:$HOME/.local/bin
 
 # Install dependencies
-flatpak install git python3
-python3 -m ensurepip --update
+python3 -m ensurepip
 pip3 install ansible-core
 
 # Clone the scripts repository
